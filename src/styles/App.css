@@ -1,0 +1,47 @@
+.main-box {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: blue;
+  display: flex;
+}
+
+.vidfondo {
+  position: absolute;
+}
+
+.products {
+  color: white;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  left: 15%;
+  top: 12%;
+  width: 600px;
+  height: 700px;
+  border-radius: 10px;
+  background-color: rgba(40, 64, 85, 0.822);
+}
+
+.productsvent {
+  position: relative;
+  color: white;
+  display: flex;
+  justify-content: center;
+  left: 25%;
+  top: 12%;
+  width: 600px;
+  height: 700px;
+  border-radius: 10px;
+  background-color: rgba(40, 64, 85, 0.822);
+}
+
+.productdata {
+  top: 10%;
+  position: absolute;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.603);
+  border: 4px solid black;
+  width: 90%;
+  height: 85%;
+}
