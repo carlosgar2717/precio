@@ -1,28 +1,27 @@
 type props = {
   nombreprodut: string;
-  setnombreprodut: string;
+  setnombreprodut: (value: string) => void;
   inputvalue: string;
-  setinputvalue: string;
+  setinputvalue: (value: string) => void;
   cantidad: number;
-  setcantidad: number;
+  setcantidad: (value: number) => void;
   costo: number;
-  setcosto: number;
+  setcosto: (value: number) => void;
   iva: number;
-  setiva: number;
+  setiva: (value: number) => void;
   ganancia: number;
-  setganancia: number;
+  setganancia: (value: number) => void;
   total: number;
-  setTotal: number;
-  setcantridadpro: number;
+  setTotal: (value: number) => void;
+  setcantridadpro: (value: number) => void;
   cantidadpro: number;
   cambio: number;
-  setcambio: number;
+  setcambio: (value: number) => void;
   ivapro: number;
-  setivapro: number;
+  setivapro: (value: number) => void;
 };
 
 function procucts({
-  nombreprodut,
   setnombreprodut,
   inputvalue,
   setinputvalue,
@@ -34,13 +33,13 @@ function procucts({
   setiva,
   ganancia,
   setganancia,
-  total,
+
   setTotal,
-  cantidadpro,
+
   setcantridadpro,
-  cambio,
+
   setcambio,
-  ivapro,
+
   setivapro,
 }: props) {
   const estilo = {
@@ -62,7 +61,7 @@ function procucts({
     },
   };
 
-  const operar = (e) => {
+  const operar = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setnombreprodut(inputvalue);
     setinputvalue("");
@@ -71,14 +70,19 @@ function procucts({
     setiva(0);
     setganancia(0);
     console.log(inputvalue);
-    let step1 = costo / cantidad;
-    let step2 = step1 + iva;
-    let step3 = step2 * (ganancia / 100);
-    let yu = step3 + step2;
-    setTotal(yu.toFixed(2));
-    setcantridadpro(cantidad);
-    setcambio(costo);
-    setivapro(iva);
+
+    if (cantidad > 0) {
+      let step1 = costo / cantidad;
+      let step2 = step1 + iva;
+      let step3 = step2 * (ganancia / 100);
+      let yu = step3 + step2;
+      setTotal(yu);
+      setcantridadpro(cantidad);
+      setcambio(costo);
+      setivapro(iva);
+    } else {
+      console.error("La cantidad debe ser mayor que 0");
+    }
   };
 
   return (
@@ -96,36 +100,60 @@ function procucts({
         <div style={estilo.casilla}>
           <h2>Cantidad</h2>
           <input
+            style={{
+              width: "100px",
+              height: "60px",
+              borderRadius: "15px",
+              textAlign: "center",
+              background: "yellow",
+            }}
             value={cantidad}
             onChange={(e) => setcantidad(Number(e.target.value))}
-            style={estilo.input}
             type="number"
           />
         </div>
         <div style={estilo.casilla}>
           <h2>Costo</h2>
           <input
+            style={{
+              width: "100px",
+              height: "60px",
+              borderRadius: "15px",
+              textAlign: "center",
+              background: "yellow",
+            }}
             value={costo}
             onChange={(e) => setcosto(Number(e.target.value) || 0)}
-            style={estilo.input}
             type="number"
           />
         </div>
         <div style={estilo.casilla}>
           <h2>IVA</h2>
           <input
+            style={{
+              width: "100px",
+              height: "60px",
+              borderRadius: "15px",
+              textAlign: "center",
+              background: "yellow",
+            }}
             value={iva}
             onChange={(e) => setiva(Number(e.target.value) || 0)}
-            style={estilo.input}
             type="number"
           />
         </div>
         <div style={estilo.casilla}>
           <h2>Ganancia</h2>
           <input
+            style={{
+              width: "100px",
+              height: "60px",
+              borderRadius: "15px",
+              textAlign: "center",
+              background: "yellow",
+            }}
             value={ganancia}
             onChange={(e) => setganancia(Number(e.target.value) || 0)}
-            style={estilo.input}
             type="number"
           />
         </div>
