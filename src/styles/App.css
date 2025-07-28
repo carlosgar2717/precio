@@ -63,8 +63,8 @@
     position: relative;
     left: 8%;
     top: 12%;
-    width: 550px;
-    height: 700px;
+    width: 400px;
+    height: 600px;
     border-radius: 10px;
     background-color: rgba(1, 55, 102, 0.822);
   }
@@ -76,8 +76,8 @@
     justify-content: center;
     left: 8%;
     top: 15%;
-    width: 550px;
-    height: 700px;
+    width: 400px;
+    height: 600px;
     border-radius: 10px;
     background-color: rgba(40, 64, 85, 0.822);
   }
