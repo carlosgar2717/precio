@@ -1,4 +1,3 @@
-import React from "react";
 type props = {
   operation: string;
   total: number;
@@ -18,7 +17,7 @@ function operation({ operation, total, cantidad, costo, iva }: props) {
     },
   };
   return (
-    <div style={estilos.data}>
+    <div style={{ textAlign: "center", marginTop: "15px" }}>
       <h1>Producto : {operation}</h1>
       <h2>
         Operación <p style={estilos.p}>Cantidad de Producto : {cantidad}</p>
