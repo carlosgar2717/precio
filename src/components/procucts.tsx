@@ -162,7 +162,7 @@ function procucts({
             position: "absolute",
             left: "37%",
             top: "86%",
-            fontSize: "30px",
+            fontSize: "23px",
             transition: "ease-in-out 0.3s",
             fontFamily: "monospace",
             background: "darkolivegreen",
