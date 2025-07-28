@@ -61,10 +61,10 @@
     display: flex;
     justify-content: center;
     position: relative;
-    left: 8%;
+    left: 3%;
     top: 12%;
     width: 400px;
-    height: 600px;
+    height: 700px;
     border-radius: 10px;
     background-color: rgba(1, 55, 102, 0.822);
   }
@@ -74,7 +74,7 @@
     color: white;
     display: flex;
     justify-content: center;
-    left: 8%;
+    left: 3%;
     top: 15%;
     width: 400px;
     height: 600px;
