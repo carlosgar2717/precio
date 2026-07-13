@@ -21,7 +21,7 @@ function App() {
     <div className="main-box">
       <video className="vidfondo" autoPlay loop muted src={Vid}></video>
       <div className="products">
-        <h1>Producto</h1>
+        <h1>Productos</h1>
         <div className="productdata">
           <Products
             nombreprodut={nombreproduct}
